@@ -1,0 +1,43 @@
+<html>
+	<body bgcolor='pink'>
+		<table align='center' cellspacing='10'>
+			<tr><td align='center'>
+				<font color='Green'>
+					<br>
+					<h1 align='center'>Pavana Medical Agency</h1>
+					<h2 align='center'> Your Billing Details </h2>
+				</font>
+				<table border=1 align='center' cellpadding=10>
+					<tr>
+						<th>Batch Number</th>
+						<th>Item Name</th>
+						<th>Company</th>
+						<th>Price Per Item</th>
+						<th>Number of Items Requested</th>
+						<th>Total price</th>
+					</tr>
+
+					{% for i in final_list %}
+						<tr>
+							<td align='center'>{{i.0}}</td>
+							<td align='center'>{{i.1}}</td>
+							<td align='center'>{{i.2}}</td>
+							<td align='center'>{{i.3}}</td>
+							<td align='center'>{{i.4}}</td>
+							<td align='center'>{{i.5}}</td>
+						</tr>
+					{% endfor %}
+					<tr>
+						<td colspan=5 align='center'> Total Sum </td>
+						<td align='center'>{{sum.0}}</td>
+					</tr> 
+				</table>
+				<br><br><br><br><br><br><br><br>
+				<font color='blue'><h3 align='center'> Dealers Signature &nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approver Signature</h3></font>
+			</td></tr>
+		</table>
+		<font align='center'><a href='/send_mail/'><input type='button' value='Send Invoice'></a></font>
+		<a href='/print_page/'><input type='button' value='Print Page'></a>
+	</body>
+</html>

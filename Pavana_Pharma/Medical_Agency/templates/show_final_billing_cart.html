@@ -1,0 +1,43 @@
+<html>
+	<body bgcolor='pink'>
+		<font color='Green'>
+			<h1 align='center'> Your Billing Item Details </h1>
+		</font>
+		<form action='/go_final_billing/' method='POST'>
+			{% csrf_token %}
+			<table border=1 align='center'>
+				<tr>
+					<th>Batch Number</th>
+					<th>Item Name</th>
+					<th>Company</th>
+					<th>Price Per Item</th>
+					<th>Number of Items Requested</th>
+					<th>Number of Items Available</th>
+					<th>Total price</th>
+				</tr>
+
+				{% for dict in test_list %}
+					<tr>
+						<td><input type='text' value='{{dict.obj.batch_num}}' name='batch_nums'></td>
+						<td><input type='text' value='{{dict.obj.item_name}}' name='item_nums'></td>
+						<td><input type='text' value='{{dict.obj.company}}' name='company_names'></td>
+						<td><input type='text' value='{{dict.obj.price_per_unit}}' name='ppus'></td>
+						<td><input type='text' value='{{dict.quantity}}' name='quantities'></td>
+						<td><input type='text' value='{{dict.obj.quantity}}' name='quantities_avl'></td>
+						<td><input type='text' value='{{dict.tp}}' name='tps'></td>
+					</tr>
+				{% endfor %}
+				<tr>
+					<td colspan=6 align='center'> Total Price </td>
+					<td><input type='text' value='{{sum}}' name='sum'></td>
+				</tr> 
+				<tr> <td colspan=7></td></tr>
+				<tr> <td colspan=7 align='center'><input type='submit' value='Do billing'></td></tr>
+			</table>
+			<br><br><br>
+			<h4 align='center' color='black'>
+				***************  If you want to change the number of items required, then change here itself  ***************
+			</h4>
+		</form>
+	</body>
+</html>

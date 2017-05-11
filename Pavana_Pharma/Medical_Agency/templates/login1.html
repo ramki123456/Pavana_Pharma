@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Welcome Page</title>
+    </head>
+    <body bgcolor='pink'>
+        <font color='green'><h1 align='center'>Welcome to Pavana Medical Agency</h1></font>
+        <br><br><br>
+        <marquee>
+            <font color='blue'><h3>Please select any one option.
+            </h3></font>
+        </marquee>
+        <table align='center' cellpadding=50>
+        <tr>
+            <td><b><a align='center' href='/check_stock/'><input type='button' value='CHECK STOCK'></a></b></td>
+        
+            <td><b><a align='center' href='/billing/'><input type='button' value='BILLING'></a></b></td>
+        </tr>
+        
+        <tr>
+            <td><b><a align='center' href='/check_dealers/'><input type='button' value='CHECK DEALERS'></a></b></td>
+            <td><b><a align='center' href='/check_prev_bills'><input type='button' value='CHECK PREVIOUS BILLS'></a></b></td>
+        </tr>
+        <tr>
+            <form method='GET' action='/add_stock/'>
+            <td><input type='text' name='items' value='Please Enter How many number of items you want to add'></td>
+            <td><b><input type='submit' value='ADD STOCK'></b></td></form>
+        </tr>
+        </table>
+    </body>
+    
+</html>

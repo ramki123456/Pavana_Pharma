@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Add Stock</title>
+    </head>
+    <body bgcolor='pink'>
+        <font color='Green'><h1 align='center'> Add The New Stock Details </h1></font>
+        <form action='/add_stock_to_db/' method='POST'>
+            {% csrf_token %} 
+            <table border=1 align='center'>
+                <tr>
+                    <th>Batch Number</th><th>Item Name</th><th>Company</th>
+                    <th>Price Per Unit</th><th>Manufacture Date</th>
+                    <th>Expiry Date</th><th>Quantity</th><th>Commets</th>
+                </tr>
+                {% for i in obj %}
+                    <tr>
+                        <td><input type='text' name={{obj.batch_num}}></td>
+                        <td><input type='text' name={{obj.item_name}></td>
+                        <td><input type='text' name={{obj.company}}></td>
+                        <td><input type='text' name={{obj.price_per_unit}}></td>
+                        <td><input type='text' name={{obj.manf_date}}></td>
+                        <td><input type='text' name={{obj.exp_data}}></td>
+                        <th><input type='text' name={{obj.quantity}}></th>
+                        <th><input type='text' name={{obj.comments}}></th>
+                    </tr>
+                {% endfor %}
+            </table>
+            <font color='red'>
+                <h3 align='center'><input type='submit' value='ADD'></h3>
+            </font>
+        </form> 
+    </body>
+</html>

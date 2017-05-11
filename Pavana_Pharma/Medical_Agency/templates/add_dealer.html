@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Add Stock</title>
+    </head>
+    <body bgcolor='pink'>
+        <font color='Green'><h1 align='center'> Add The New Dealer Details</h1></font>
+        <form action='/add_dealer_to_db/' method='POST'>
+            {% csrf_token %} 
+            <table border=1 align='center'>
+                <tr>
+                    <th>Dealer Name</th><th>Dealer Company Name</th><th>Dealer Address</th>
+                    <th>DL Number1</th><th>DL Number2</th>
+                    <th>Dealer Tin Number</th><th>Dealer Phone Number</th><th>Dealer Email Id</th>
+                </tr>
+                <tr>
+                    <td><input type='text' name='dealer_name'></td>
+                    <td><input type='text' name='dealer_company_name'></td>
+                    <td><input type='text' name='dealer_addrs'></td>
+                    <td><input type='text' name='dealer_dl1'></td>
+                    <td><input type='text' name='dealer_dl2'></td>
+                    <th><input type='text' name='dealer_tin'></th>
+                    <th><input type='text' name='dealer_phone'></th>
+                    <th><input type='text' name='dealer_email'></th>
+                </tr>
+            </table>
+            <font color='red'>
+                <h3 align='center'><input type='submit' value='Add Dealer'></h3>
+            </font>
+        </form> 
+    </body>
+</html>

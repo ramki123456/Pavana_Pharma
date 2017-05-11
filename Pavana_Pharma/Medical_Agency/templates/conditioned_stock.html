@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Add Stock</title>
+    </head>
+    <body bgcolor='pink'>
+        <font color='Green'><h1 align='center'> Your {{search}} based Stock Details </h1></font>
+        <form>
+            <table border=1 align='center'>
+                <tr>
+                    <th>Batch Number</th><th>Item Name</th><th>Company</th>
+                    <th>Price Per Unit</th><th>Manufacture Date</th>
+                    <th>Expiry Date</th><th>Quantity</th><th>Commets</th>
+                </tr>
+                {% for i in data %}
+                    <tr>
+                        <td><input type='text' value={{i.batch_num}}></td>
+                        <td><input type='text' value={{i.item_name}}></td>
+                        <td><input type='text' value={{i.company}}></td>
+                        <td><input type='text' value={{i.price_per_unit}}></td>
+                        <td><input type='text' value={{i.manf_data}}></td>
+                        <td><input type='text' value={{i.exp_data}}></td>
+                        <th><input type='text' value={{i.quantity}}></th>
+                        <th><input type='text' value={{i.comments}}></th>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br><br>
+            <font align='center'>
+				<h4 align='center'>click <a href='/home/'>HERE</a> to redirect to Home page</h4>
+                <h4 align='center'>click <a href='/check_item_wise/'>HERE</a> to search with Item_Name </h4>
+                <h4 align='center'>click <a href='/check_company_wise/'>HERE</a> to search with Company Name </h4>
+                <h4 align='center'>click <a href='/check_batch_num_wise/'>HERE</a> to search with Batch Number </h4>
+			</font>
+
+        </form> 
+    </body>
+</html>

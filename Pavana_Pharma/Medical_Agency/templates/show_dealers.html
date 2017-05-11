@@ -1,0 +1,32 @@
+<html>
+	<body bgcolor='pink'>
+		<font color='Green'><h1 align='center'> Dealers Details </h1></font>
+        <form>
+            <table border=1 align='center'>
+                <tr>
+                    <th>Dealer Name</th><th>Dealer Company Name</th><th>Dealer Address</th>
+                    <th>DL Number1</th><th>DL Number2</th>
+                    <th>Dealer Tin Number</th><th>Dealer Phone Number</th><th>Dealer Email Id</th>
+                </tr>
+                {% for i in data %}
+                    <tr>
+                        <td><input type='text' value={{i.dealer_name}}></td>
+                        <td><input type='text' value={{i.dealer_company_name}}></td>
+                        <td><input type='text' value={{i.dealer_addrs}}></td>
+                        <td><input type='text' value={{i.dealer_dl1}}></td>
+                        <td><input type='text' value={{i.dealer_dl2}}></td>
+                        <td><input type='text' value={{i.dealer_tin}}></td>
+                        <th><input type='text' value={{i.dealer_phone}}></th>
+                        <th><input type='text' value={{i.dealer_email}}></th>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br><br>
+            <font align='center'>
+				<h4 align='center'>click <a href='/home/'>HERE</a> to redirect to Home page</h4><br><br>
+				<h4 align='center'>click <a href='/add_dealer/'><input type='button' value='Here'></a> to add the Dealer</h4>
+			</font>
+
+        </form>
+	</body>
+</htmt>

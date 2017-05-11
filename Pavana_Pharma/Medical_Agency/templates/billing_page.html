@@ -1,0 +1,39 @@
+<html>
+	<body bgcolor='pink'>
+		<font color='green'><h1 align='center'>Welcome to Billing Page</h1></font>
+		<br><br><br>
+		<marquee>
+			<font color='blue'><h3>Please enter the items_number and quantity to do billing. Here you can add 10 items at a time. If you wish to add more than 10 items then Enter "YES" in the Add more text box.
+			</h3></font>
+		</marquee>
+		<form action='/show_billing_cart/' method='POST'>
+			{% csrf_token %}
+			<table align='center' border=1>
+				<th>Batch Number</th><th>Quantity</th>
+				{% for i in '12345678910'%}
+					<tr>
+						<td>
+							<select name='item_name_s'>
+								<option value=''></option>
+								{% for obj in objs %}
+									<option value = {{obj}}> {{obj.item_name}} </option>
+								{% endfor %}
+							</select>
+						</td>
+						<td><input type='text' name='qnt'></td>
+					</tr>
+				{% endfor %}
+				<tr align='center'>
+					<td colspan=2>
+						<input type='text' value='Please type YES to add more items' size=47>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2 align='center'>
+						<input type='submit' value='Go for Billing' name='add_more'>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+<html>
